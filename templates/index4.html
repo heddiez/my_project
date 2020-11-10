@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        // $('.card-emotion').css({background: "#FFFFFF", color: ""});
+        // $('.card-emotion:eq("+$(this).index()+")buttuon').css({background: "#5E610B", color: "#FFFFFF"});
+        // $(document).ready(function() {
+        //     $('.card-emotion').each(function() {
+        //         $(this).click(function () {
+        //             $(this).addClass('selected');
+        //             $(this).siblings().removeClass('selected');
+        //
+        //
+        //         });
+        //     });
+        // });
+
+        var div2 = document.getElementsByClassName('div2');
+
+        for (var i = 0; i < div2.length; i++) {
+            div2[i].addEventListener('click', function () {
+                for (var j = 0; j < div2.length; j++) {
+                    div2[j].style.color = "black";
+                }
+                this.style.color = "gold";
+            })
+        }
+
+
+
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Nanum+Gothic:wght@400;700;800&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="../static/css.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        Eating Emotion
+    </div>
+    <div class="body">
+
+        <div class="icon">
+            <img src="../static/icon.gif" alt="icon">
+        </div>
+        <div class="wrap">
+            <div class="content content-select">
+                <div class="card-emotion" value="sadness">슬픔</div>
+                <div class="card-emotion" value="anger">분노</div>
+                <div class="card-emotion" value="stress">스트레스</div>
+                <div class="card-emotion" value="depressed">우울/무기력함</div>
+
+            </div>
+            <div class="content-footer">
+                <!--                <input type="button" value="다음" onclick="btn_on();">-->
+                <!--                <input type="button" value="다음" onclick="btn_off();">-->
+                <input id="next" type="button" value="다음" onclick="btn_on();">
+            </div>
+
+        </div>
+
+    </div>
+    <div class="footter"></div>
+
+</div>
+
+</body>
+</html>
