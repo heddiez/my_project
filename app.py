@@ -19,7 +19,7 @@ def show_stars():
     emotion_receive = request.args.get("emotion_give")
     food_list = list(db.eating_emotion.find({emotion_receive: 'T'}, {'_id': False}))
     random.shuffle(food_list)
-    return jsonify({'result': 'success', 'msg': food_list[:6]})
+    return jsonify({'result': 'success', 'data': food_list[:6]})
 
 
 if __name__ == '__main__':

@@ -3,6 +3,13 @@ let data = {
     'food': ''
 };
 
+function previous(from) {
+    let currentSection = $('.show-section');
+    let previousSection = currentSection.prev();
+    currentSection.removeClass('show-section');
+    previousSection.addClass('show-section');
+}
+
 function next(from) {
     if (from === 'section01') {
 
@@ -46,7 +53,7 @@ function getFoodByEmotion(emotion) {
         emotion = 'anger'
     } else if (emotion === '스트레스') {
         emotion = 'stress'
-    } else if (emotion === '우울 / 무기력함') {
+    } else if (emotion === '우울/무기력함') {
         emotion = 'depressed'
     }
 
@@ -55,10 +62,14 @@ function getFoodByEmotion(emotion) {
         url: "/food?emotion_give=" + emotion,
         data: {},
         success: function (response) {
-            console.log(response)
+            $('.section04').empty();
             if (response["result"] === "success") {
                 let data = response["data"];
-
+                for (let i = 0; i < data.length; i++) {
+                    let recommend = data[i];
+                    let temp = `<div class="card col-sm-3">${recommend['food']}</div>`;
+                    $('.section04').append(temp);
+                }
             }
         }
     })

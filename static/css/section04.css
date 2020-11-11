@@ -1,0 +1,21 @@
+.section04 .card {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    width: 29%;
+    height: 60px;
+    background-color: #FFFFFF;
+    margin-top: 35px;
+    border: #848484 solid 1px;
+    border-radius: 15px;
+}
+
+
+
+.section04 .card:hover {
+    background-color: #5E610B;
+    color: #FFFFFF;
+    font-weight: bold;
+}

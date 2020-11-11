@@ -128,7 +128,7 @@ html, body {
 
 
 
-.question02 {
+.section04 {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
@@ -202,27 +202,7 @@ html, body {
 }
 
 
-.card {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
 
-    width: 29%;
-    height: 60px;
-    background-color: #FFFFFF;
-    margin-top: 35px;
-    border: #848484 solid 1px;
-    border-radius: 15px;
-}
-
-
-
-.card:hover {
-    background-color: #5E610B;
-    color: #FFFFFF;
-    font-weight: bold;
-}
 
 
 .content-next {
