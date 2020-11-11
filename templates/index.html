@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <title>Eating Emotion</title>
 
-    <!--    JS-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <!--    BOOTSTRAP-->
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Nanum+Gothic:wght@400;700;800&display=swap"
@@ -15,54 +12,6 @@
     <!--    CSS-->
     <link rel="stylesheet" href="../static/css.css">
 
-
-    <script>
-        $('.content-text').hide();
-
-        let scripts = [
-            "안녕! 나는 컴포트라고 해",
-            "너의 기분에 맞는 음식과 가게를 추천해줄 거야<br><br>지금 너의 기분을 알려줄래?",
-            "기분 선택",
-            "기분에 맞는 음식을 추천해줄게 <br><br> 다음 음식 중 지금 먹고 싶은 걸 알려줘!",
-            "음식 선택",
-            "그럼 이제 해당 가게를 찾고 싶은 장소는 어디야?",
-            "주소 입력",
-            "지금부터 가게를 찾아줄게.<br><br> 맛있는 거 먹고 기분이 나아지면 좋겠다!"
-        ];
-
-        let state = 0;
-
-        $(document).ready(function () {
-            $('.content-text').text(scripts[state]);
-            showScript();
-        })
-
-
-        function showScript() {
-            $('#next').click(function () {
-                alert("눌려라 제발,,,")
-                for (let i = 1; i < scripts.length; i++) {
-                    let state = scripts[i];
-                    $('.content-text').text(state);
-
-                    if (i === 2) {
-                        $('.content-text').css('z-index', 3);
-                    } else if (i === 3) {
-                        $('.content-select4').hide();
-                    } else if (i === 4) {
-                        $('.content-text').css('z-index', 5);
-                    } else if (i === 5) {
-                        $('.content-select6').hide();
-                    } else if (i === 6) {
-                        $('.content-text').css('z-index', 7);
-                    }
-
-                }
-            })
-
-        }
-
-    </script>
 </head>
 <body>
 
@@ -78,35 +27,23 @@
 
         <div class="wrap">
             <div class="content-text-list">
-                <div class="content-text"></div>
-                <div class="content-select4" style="background-color: red">
-<!--                    <div class="card-emotion">슬픔</div>-->
-<!--                    <div class="card-emotion">분노</div>-->
-<!--                    <div class="card-emotion">스트레스</div>-->
-<!--                    <div class="card-emotion">우울/무기력함</div>-->
-                </div>
-                <div class="content-select6" style="background-color: blue">
-<!--                    <div class="card col-sm-3"></div>-->
-<!--                    <div class="card col-sm-3"></div>-->
-<!--                    <div class="card col-sm-3"></div>-->
-<!--                    <div class="card col-sm-3"></div>-->
-<!--                    <div class="card col-sm-3"></div>-->
-<!--                    <div class="card col-sm-3"></div>-->
-                </div>
-                <div class="content-address" style="background-color: yellow">
+<!--                <div class="content-text"></div>-->
+                {% include './sections/section01.html' %}
+                {% include './sections/section02.html' %}
+
+
+<!--                <div class="content-address" style="background-color: yellow">-->
 <!--                    <input type="text" class="search" placeholder="OO시 OO구 형식으로 입력해주세요 ex) 서울시 강남구">-->
-                </div>
-
-                <div class="content-footer">
-                    <input id="next" type="button" value="다음" onclick="btn_on();">
-                </div>
+<!--                </div>-->
             </div>
-
         </div>
-        <div class="footter"></div>
 
     </div>
 
 </div>
+
+<!--    JS-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="../static/main.js"></script>
 </body>
 </html>
