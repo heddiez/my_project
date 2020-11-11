@@ -1,17 +1,25 @@
 from pymongo import MongoClient
-
+import random
 from flask import Flask, render_template, jsonify, request
 
 app = Flask(__name__)
 
 client = MongoClient('localhost', 27017)
-db = client.dbsparta
+db = client.myproject
 
 
 # HTML 화면 보여주기
 @app.route('/')
 def home():
     return render_template('index.html')
+
+
+@app.route('/food', methods=['GET'])
+def show_stars():
+    emotion_receive = request.args.get("emotion_give")
+    food_list = list(db.eating_emotion.find({emotion_receive: 'T'}, {'_id': False}))
+    random.shuffle(food_list)
+    return jsonify({'result': 'success', 'msg': food_list[:6]})
 
 
 if __name__ == '__main__':
