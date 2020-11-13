@@ -1,7 +1,6 @@
 let data = {
     'emotion': '',
-    'food': '',
-    'choice': ''
+    'food': ''
 };
 
 function previous(from) {
@@ -26,10 +25,11 @@ function next(from) {
             return;
         }
 
-    } else if (from === 'section07') {
-
     } else if (from === 'section08') {
-
+        // if (data['food'] === '') {
+        //     alert('주소를 입력해주세요');
+        //     return;
+        //}
     }
 
     let currentSection = $('.show-section');
@@ -76,10 +76,3 @@ function getFoodByEmotion(emotion) {
     })
 }
 
-function selectFood(food) {
-    data["food"] = food;
-    console.log(data);
-    $('.section05 .selected').removeClass('selected');
-    let card = $(`.section05 div:contains(${food})`);
-    $(card[0]).addClass('selected');
-}
