@@ -1,6 +1,7 @@
 let data = {
     'emotion': '',
-    'food': ''
+    'food': '',
+    'choice': ''
 };
 
 function previous(from) {
@@ -11,11 +12,7 @@ function previous(from) {
 }
 
 function next(from) {
-    if (from === 'section01') {
-
-    } else if (from === 'section02') {
-
-    } else if (from === 'section03') {
+    if (from === 'section03') {
         if (data['emotion'] === '') {
             alert('하나 선택해주세요');
             return;
@@ -24,6 +21,10 @@ function next(from) {
         getFoodByEmotion(data['emotion'])
 
     } else if (from === 'section05') {
+        if (data['food'] === '') {
+            alert('하나 선택해주세요');
+            return;
+        }
 
     } else if (from === 'section07') {
 
@@ -62,15 +63,23 @@ function getFoodByEmotion(emotion) {
         url: "/food?emotion_give=" + emotion,
         data: {},
         success: function (response) {
-            $('.section04').empty();
+            $('.section05').empty();
             if (response["result"] === "success") {
                 let data = response["data"];
                 for (let i = 0; i < data.length; i++) {
                     let recommend = data[i];
                     let temp = `<div class="card col-sm-3">${recommend['food']}</div>`;
-                    $('.section04').append(temp);
+                    $('.section05').append(temp);
                 }
             }
         }
     })
+}
+
+function selectFood(food) {
+    data["food"] = food;
+    console.log(data);
+    $('.section05 .selected').removeClass('selected');
+    let card = $(`.section05 div:contains(${food})`);
+    $(card[0]).addClass('selected');
 }
