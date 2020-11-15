@@ -15,7 +15,7 @@ def home():
 
 
 @app.route('/food', methods=['GET'])
-def show_stars():
+def show_food():
     emotion_receive = request.args.get("emotion_give")
     food_list = list(db.eating_emotion.find({emotion_receive: 'T'}, {'_id': False}))
     random.shuffle(food_list)

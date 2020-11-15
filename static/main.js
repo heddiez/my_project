@@ -1,6 +1,7 @@
 let data = {
     'emotion': '',
-    'food': ''
+    'food': '',
+    'address': ''
 };
 
 function previous(from) {
@@ -24,6 +25,7 @@ function next(from) {
             alert('하나 선택해주세요');
             return;
         }
+
 
     } else if (from === 'section08') {
         // if (data['food'] === '') {
@@ -68,11 +70,18 @@ function getFoodByEmotion(emotion) {
                 let data = response["data"];
                 for (let i = 0; i < data.length; i++) {
                     let recommend = data[i];
-                    let temp = `<div class="card col-sm-3">${recommend['food']}</div>`;
+                    let temp = `<div class="card">${recommend['food']}</div>`;
                     $('.section05').append(temp);
+
+                    $('.section05').delegate('.card', 'click', function () {
+
+
+                    });
+
                 }
             }
         }
     })
+
 }
 
