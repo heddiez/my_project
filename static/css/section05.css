@@ -22,6 +22,10 @@
     border-radius: 15px;
 }
 
+.section05 .selected {
+    color: white;
+    background-color: #5E610B;
+}
 
 .section05 .card:hover {
     background-color: #5E610B;

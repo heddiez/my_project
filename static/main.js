@@ -26,9 +26,8 @@ function next(from) {
             return;
         }
 
-
-    } else if (from === 'section08') {
-        // if (data['food'] === '') {
+    } else if (from === 'section07') {
+        // if (data['address'] === '') {
         //     alert('주소를 입력해주세요');
         //     return;
         //}
@@ -73,8 +72,13 @@ function getFoodByEmotion(emotion) {
                     let temp = `<div class="card">${recommend['food']}</div>`;
                     $('.section05').append(temp);
 
-                    $('.section05').delegate('.card', 'click', function () {
+                    $('.section05').delegate('.card', 'click', function selectFood() {
 
+                            food = data[i]["food"];
+                            console.log(food);
+                            $('.section05 .selected').removeClass('selected');
+                            let card = $(`.section05 div:contains(${food})`);
+                            $(card[0]).addClass('selected');
 
                     });
 
