@@ -1,6 +1,6 @@
 .section07 {
     display: flex;
-    align-content: center;
+    align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;

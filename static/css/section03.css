@@ -24,6 +24,7 @@
 .section03 .selected {
     color: white;
     background-color: #5E610B;
+    font-weight: bold;
 }
 
 .section03 .card-emotion:hover {
