@@ -4,7 +4,7 @@ from flask import Flask, render_template, jsonify, request
 
 app = Flask(__name__)
 
-client = MongoClient('localhost', 27017)
+client = MongoClient('mongodb://test:test@localhost', 27017)
 db = client.myproject
 
 
@@ -20,17 +20,6 @@ def show_food():
     food_list = list(db.eating_emotion.find({emotion_receive: 'T'}, {'_id': False}))
     random.shuffle(food_list)
     return jsonify({'result': 'success', 'data': food_list[:6]})
-
-
-@app.route('/food', methods=['POST'])
-def post_address():
-    address_receive = request.form['address_give']
-
-    doc = {
-        'address': address_receive
-    }
-
-
 
 
 if __name__ == '__main__':

@@ -91,18 +91,3 @@ function searchMap() {
     window.open(`https://map.naver.com/v5/search/${data['address']} ${data['food']}?c=14141000.0766329,4511459.8281494,13,0,0,0,dh`);
     
 }
-
-//function selectAddress(address) {
-//     // https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%EC%8B%9C%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EB%A7%A5%EC%A3%BC?c=14141000.0766329,4511459.8281494,13,0,0,0,dh
-//     $.ajax({
-//         type: "POST",
-//         url: "/food?address_give=" + address,
-//         data: {'address_give': address},
-//         success: function (response) {
-//             if (response["result"] === "success") {
-//                 console.log(address_give);
-//                 alert(response["msg"]);
-//             }
-//         }
-//     })
-// }
